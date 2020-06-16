@@ -70,7 +70,7 @@ logging.debug("DEBUG MODE")
 
 def runprog(topic, param=None):
 
-    publish = "%s/"+socket.gethostname()+"/report" % topic
+    publish = "%s/report" % topic
 
     if param is not None and all(c in string.printable for c in param) == False:
         logging.debug("Param for topic %s is not printable; skipping" % (topic))
