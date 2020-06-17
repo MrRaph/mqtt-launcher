@@ -147,11 +147,10 @@ if __name__ == '__main__':
 
     mqttc.connect(cf.get('mqtt_broker', 'localhost'), int(cf.get('mqtt_port', '1883')), 60)
 
-    # while True:
-    #     try:
-    #         mqttc.loop_forever()
-    #     except socket.error:
-    #         time.sleep(5)
-    #     except KeyboardInterrupt:
-    #         sys.exit(0)
-    mqttc.loop_forever()
+    while True:
+        try:
+            mqttc.loop_forever()
+        except socket.error:
+            time.sleep(5)
+        except KeyboardInterrupt:
+            sys.exit(0)
