@@ -125,9 +125,10 @@ if __name__ == '__main__':
         logging.info("No topic list. Aborting")
         sys.exit(2)
 
-    clientid = cf.get('mqtt_clientid', 'mqtt-launcher-%s' % os.getpid())
+    #clientid = cf.get('mqtt_clientid', 'mqtt-launcher-%s' % os.getpid())
     # initialise MQTT broker connection
-    mqttc = paho.Client(clientid, clean_session=False)
+    #mqttc = paho.Client(clientid, clean_session=False)
+    mqttc = paho.Client()
 
 
     mqttc.on_message = on_message
